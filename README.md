@@ -157,3 +157,17 @@
 
     *SELECT COUNT(DISTINCT replacement_cost) FROM film 
     WHERE length > 150*
+
+25. **Film tablosunda bulunan filmleri rating değerlerine göre gruplayınız.**
+
+    *SELECT rating, COUNT(*) AS film FROM film
+    GROUP BY rating
+    ORDER BY film*
+
+26. **Film tablosunda bulunan filmleri replacement_cost sütununa göre grupladığımızda film sayısı 50 den fazla olan replacement_cost değerini ve karşılık gelen film sayısını sıralayınız.**
+
+    *SELECT replacement_cost, COUNT(*) AS film
+    FROM film
+    GROUP BY replacement_cost
+    HAVING COUNT(*) > 50
+    ORDER BY replacement_cost*
