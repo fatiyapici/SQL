@@ -171,3 +171,17 @@
     GROUP BY replacement_cost
     HAVING COUNT(*) > 50
     ORDER BY replacement_cost*
+
+27. **Customer tablosunda bulunan store_id değerlerine karşılık gelen müşteri sayıları nelerdir?**
+
+    *SELECT store_id, COUNT(*) AS customer
+    FROM customer
+    GROUP BY store_id*
+
+28. **City tablosunda bulunan şehir verilerini country_id sütununa göre gruplandırdıktan sonra en fazla şehir sayısı barındıran country_id bilgisini ve şehir sayısını paylaşınız.**
+
+    *SELECT country_id, COUNT(*) as city_count
+    FROM city
+    GROUP BY country_id
+    ORDER BY city_count DESC
+    LIMIT 1*
