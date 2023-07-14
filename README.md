@@ -1,5 +1,8 @@
 # SQL Practices
 
+## SQL Basics
+
+
  1. **Film tablosunda bulunan title ve description sütunlarındaki verileri
     sıralayınız.**
 
@@ -120,6 +123,8 @@
     ORDER BY length 
     DESC LIMIT 5*
 
+## SQL Basics II
+
 19. **Film tablosunda bulunan ve film ismi (title) 'n' karakteri ile biten en kısa (length) ikinci(6,7,8,9,10) 5 filmi(6,7,8,9,10) sıralayınız.**
 
     *SELECT * FROM film 
@@ -185,3 +190,41 @@
     GROUP BY country_id
     ORDER BY city_count DESC
     LIMIT 1*
+
+## Tables
+
+29. **Test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.**
+
+    *CREATE TABLE author (
+    id int,
+    name VARCHAR(50),
+    birthday DATE,
+    email VARCHAR(100)
+    )*
+
+30. **Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.**
+
+    *insert into employee (id, name, email, birthday) values (1, 'Orel', 'ostapels0@zimbio.com', '1901-06-03');
+    insert into employee (id, name, email, birthday) values (2, 'Tabbie', 'tismail1@berkeley.edu', '1974-03-18');
+    insert into employee (id, name, email, birthday) values (3, 'Clifford', 'cjirik2@google.nl', '2020-07-03') ...*
+
+31. **Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.**
+
+    *UPDATE employee
+    SET name = '11111',
+	birthday = '1980-01-01',
+    email = 'first@first.com'
+    WHERE id = 1
+
+    UPDATE employee
+    SET name = '22222',
+	birthday = '1980-01-01',
+    email = 'second@second.com'
+    WHERE id = 2 ...*
+
+32. **Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.**
+
+    *DELETE FROM employee
+    WHERE name = '11111'
+    DELETE FROM employee
+    WHERE name = '22222' ...*
