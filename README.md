@@ -214,9 +214,9 @@
     SET name = '11111',
 	birthday = '1980-01-01',
     email = 'first@first.com'
-    WHERE id = 1
+    WHERE id = 1*
 
-    UPDATE employee
+    *UPDATE employee
     SET name = '22222',
 	birthday = '1980-01-01',
     email = 'second@second.com'
@@ -225,6 +225,6 @@
 32. **Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.**
 
     *DELETE FROM employee
-    WHERE name = '11111'
-    DELETE FROM employee
+    WHERE name = '11111'*
+    *DELETE FROM employee
     WHERE name = '22222' ...*
