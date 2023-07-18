@@ -228,3 +228,26 @@
     WHERE name = '11111'*
     *DELETE FROM employee
     WHERE name = '22222' ...*
+
+## JOIN STRUCTURES
+
+33. **City tablosu ile country tablosunda bulunan şehir (city) ve ülke (country) isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.**
+
+    *SELECT city.city, country.country
+    FROM city
+    INNER JOIN country 
+    ON country.country_id = city.country_id*
+
+34. **Customer tablosu ile payment tablosunda bulunan payment_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.**
+
+    *SELECT payment.payment_id, customer.first_name, customer.last_name
+    FROM payment
+    INNER JOIN customer
+    ON payment.customer_id = customer.customer_id*
+
+35. **Customer tablosu ile rental tablosunda bulunan rental_id ile customer tablosundaki first_name ve last_name isimlerini birlikte görebileceğimiz INNER JOIN sorgusunu yazınız.**
+
+    *SELECT rental.rental_id, customer.first_name, customer.last_name
+    FROM rental
+    INNER JOIN customer
+    ON rental.customer_id = customer.customer_id*
