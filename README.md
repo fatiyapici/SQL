@@ -316,3 +316,33 @@
     EXCEPT ALL
     (SELECT first_name
     FROM customer)*
+
+43. **Film tablosunda film uzunluğu length sütununda gösterilmektedir. Uzunluğu ortalama film uzunluğundan fazla kaç tane film vardır?**
+
+    *SELECT * FROM film
+    WHERE length >
+    (SELECT AVG(film.length)
+    FROM film)*
+
+44. **Film tablosunda en yüksek rental_rate değerine sahip kaç tane film vardır?**
+
+    *SELECT * FROM film
+    WHERE rental_rate =
+    (SELECT MAX(film.rental_rate)
+    FROM film)*
+
+45. **Film tablosunda en düşük rental_rate ve en düşün replacement_cost değerlerine sahip filmleri sıralayınız.**
+
+    *SELECT * FROM film
+    WHERE rental_rate = 
+    (SELECT MIN(film.rental_rate) FROM film)
+    AND replacement_cost = 
+    (SELECT MIN(film.replacement_cost) FROM film)*
+
+46. **Payment tablosunda en fazla sayıda alışveriş yapan müşterileri(customer) sıralayınız.**
+
+    *SELECT c.customer_id, c.first_name, c.last_name, c.email, COUNT(p.payment_id) AS transaction_count
+    FROM customer c
+    JOIN payment p ON c.customer_id = p.customer_id
+    GROUP BY c.customer_id, c.first_name, c.last_name, c.email
+    ORDER BY transaction_count DESC*
